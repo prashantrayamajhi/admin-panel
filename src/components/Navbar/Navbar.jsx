@@ -11,6 +11,9 @@ import {
   BrandingWatermarkSharp,
   PowerSettingsNew,
   Settings,
+  VideoSettings,
+  DocumentScanner,
+  Group,
 } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 
@@ -48,18 +51,32 @@ const Navbar = () => {
             <Dashboard className="icon" />
             Dashboard
           </NavLink>
-          <NavLink to="/posts" className="link" exact onClick={handleOpen}>
+          <NavLink to="/schools" className="link" exact onClick={handleOpen}>
             <BrandingWatermarkSharp className="icon" />
-            Posts
+            Schools
+          </NavLink>
+
+          <NavLink to="/classes" className="link" exact onClick={handleOpen}>
+            <Group className="icon" />
+            Classes
           </NavLink>
           <NavLink to="/users" className="link" exact onClick={handleOpen}>
             <AccountCircle className="icon" />
             Users
           </NavLink>
-          <NavLink to="/inbox" className="link" onClick={handleOpen}>
+          <NavLink to="/videos" className="link" exact onClick={handleOpen}>
+            <VideoSettings className="icon" />
+            Videos
+          </NavLink>
+          <NavLink to="/documents" className="link" exact onClick={handleOpen}>
+            <DocumentScanner className="icon" />
+            Documents
+          </NavLink>
+
+          {/* <NavLink to="/inbox" className="link" onClick={handleOpen}>
             <Inbox className="icon" />
             Inbox
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/settings" className="link" exact onClick={handleOpen}>
             <Settings className="icon" />
             Settings

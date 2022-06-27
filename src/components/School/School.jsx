@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import "./../../css/Wrapper.scss";
 import { AddCircle } from "@mui/icons-material";
 
-const Users = () => {
-  const [users, setUsers] = useState([]);
+const School = () => {
+  const [schools, setSchools] = useState([]);
   const [config, setConfig] = useState(null);
   let sn = 0;
 
@@ -15,22 +15,22 @@ const Users = () => {
   }, []);
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchSchool = async () => {
       try {
-        const res = await Axios.get("/admin/users", config);
-        setUsers(res.data.data);
+        const res = await Axios.get("/admin/schools", config);
+        setSchools(res.data.data);
       } catch (err) {
         console.log(err);
       }
     };
-    fetchUsers();
+    fetchSchool();
   }, [config]);
 
   return (
     <>
       <div className="wrapper">
         <div className="heading">
-          <Link to="/users/create" className="icon-wrapper">
+          <Link to="/schools/create" className="icon-wrapper">
             <AddCircle className="add-icon" />
           </Link>
         </div>
@@ -38,20 +38,22 @@ const Users = () => {
           <thead>
             <tr>
               <th>SN</th>
-              <th>Full Name</th>
-              <th>Email</th>
+              <th>Name</th>
+              <th>Logo</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => {
+            {schools.map((school, index) => {
               return (
                 <tr key={index}>
                   <td>{sn}</td>
                   <td>
-                    <p>{user.name}</p>
+                    <p>{school.name}</p>
                   </td>
-                  <td>{user.email}</td>
+                  <td>
+                    <img src={school.image} alt="" />
+                  </td>
                   <td className="actions">
                     <p>Edit | Delete</p>
                   </td>
@@ -65,4 +67,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default School;

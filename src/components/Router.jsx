@@ -11,12 +11,19 @@ import Login from "./Login/Login";
 import Navbar from "./Navbar/Navbar";
 
 import Home from "./Home/Home";
-import Post from "./Posts/Posts";
-import CreatePost from "./Posts/Create";
 import Users from "./Users/Users";
 import CreateUser from "./Users/Create";
 import Inbox from "./Inbox/Inbox";
 import Settings from "./Settings/Settings";
+
+import Schools from "./School/School";
+import CreateSchool from "./School/Create";
+
+import Classes from "./Class/Class";
+import CreateClass from "./Class/Create";
+
+import Subject from "./Subject/Subject";
+import CreateSubject from "./Subject/Subject";
 
 const RouterComponent = () => {
   const DefaultContainer = () => {
@@ -37,9 +44,19 @@ const RouterComponent = () => {
           <Route element={<DefaultContainer />}>
             <Route path="/" element={<Home />} />
             <Route path="/inbox" element={<Inbox />} />
-            <Route path="/posts" element={<Post />} />
-            <Route path="/posts/create" element={<CreatePost />} />
-            <Route path="/posts/create/:id" element={<CreatePost />} />
+
+            <Route path="/schools" element={<Schools />} />
+            <Route path="/schools/create" element={<CreateSchool />} />
+            <Route path="/schools/create/:id" element={<CreateSchool />} />
+
+            <Route path="/classes" element={<Classes />} />
+            <Route path="/classes/create" element={<CreateClass />} />
+            <Route path="/classes/create/:id" element={<CreateClass />} />
+
+            <Route path="/subjects" element={<Subject />} />
+            <Route path="/subjects/create" element={<CreateSubject />} />
+            <Route path="/subjects/create/:id" element={<CreateSubject />} />
+
             <Route path="/users" element={<Users />} />
             <Route path="/users/create" element={<CreateUser />} />
             <Route path="/users/create/:id" element={<CreateUser />} />
