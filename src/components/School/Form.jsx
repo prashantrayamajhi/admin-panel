@@ -18,7 +18,7 @@ const Form = ({ formik, id, setDisplayImage }) => {
           <div className="doubleInputWrapper">
             <TextField
               id="outlined-basic-1"
-              label="Company Name"
+              label="Name"
               variant="outlined"
               className="input"
               name="name"

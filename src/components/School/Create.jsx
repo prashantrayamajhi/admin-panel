@@ -42,9 +42,9 @@ const Create = () => {
   }
 
   useEffect(() => {
-    const fetchCompany = async () => {
+    const fetchSchool = async () => {
       try {
-        const res = await Axios.get(`/admin/companies/${id}`, config);
+        const res = await Axios.get(`/admin/schools/${id}`, config);
         formik.setValues(res.data.data);
         setDisplayImage(res.data.data.image);
       } catch (err) {
@@ -52,7 +52,7 @@ const Create = () => {
       }
     };
     if (id && config) {
-      fetchCompany();
+      fetchSchool();
     }
   }, [config, id]);
 
